@@ -38,8 +38,16 @@
       <div v-for="sizes in size">
           <p>{{ sizes }}</p>
       </div>
-      <button v-on:click="addToCart">Add to Cart</button>
-      <button v-on:click="removeFromCart">Remove Cart</button>
+      <button @click="addToCart"
+              :disabled="!inStock"
+              :class="{disabledButton: inventory <= 0}"
+              >Add to Cart</button>
+
+      <button @click="removeFromCart"
+              :disabled="cart <= 0"
+              :class="{disabledButton: cart <= 0}"
+              >Delete Cart</button>
+
 
       <div class="cart">
         <p>Cart : ({{cart}})</p>

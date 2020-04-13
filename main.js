@@ -24,6 +24,7 @@ let app = new Vue({
     ],
     size: [7,8,9],
     cart: 0,
+    inStock: true
   },
   methods:{
     addToCart() {
