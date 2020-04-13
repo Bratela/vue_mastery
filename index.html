@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Shop</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
       
       <p v-if="inventory > 10">In stock</p>
       <p v-else-if="inventory <= 10 && inventory > 0">Almost Sold Out</p>
-      <p v-else>Out of stock</p>
+      <p v-else :class="{outOfStock: !inStock}" >Out of stock</p>
       
       <p>{{ description }}</p>
       <a :href="link">Link to socks</a>
